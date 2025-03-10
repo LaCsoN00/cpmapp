@@ -1,6 +1,3 @@
--- CreateEnum
-CREATE TYPE "PaymentMethod" AS ENUM ('CHEQUE', 'VIREMENT', 'ESPECE');
-
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
@@ -30,12 +27,11 @@ CREATE TABLE "Task" (
     "description" TEXT NOT NULL,
     "status" TEXT NOT NULL DEFAULT 'To Do',
     "dueDate" TIMESTAMP(3),
+    "price" DOUBLE PRECISION,
     "projectId" TEXT NOT NULL,
     "userId" TEXT,
     "createdById" TEXT NOT NULL,
     "solutionDescription" TEXT,
-    "amount" DOUBLE PRECISION,
-    "paymentMethod" "PaymentMethod",
 
     CONSTRAINT "Task_pkey" PRIMARY KEY ("id")
 );
